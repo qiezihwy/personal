@@ -1,14 +1,5 @@
 stages:
-  - build
   - deploy
-
-
-build:
-  stage: build
-  tags:
-    - build
-  script:
-    - echo "我是 build"
   
 
 
@@ -21,7 +12,7 @@ pages: # job 的名称必须要是 pages
 
   script: # 生成站点
     - mkdir public
-    - cp index.html public/index.html
+    - cp *.md public/
   artifacts: # 制品
     paths:
       - public
