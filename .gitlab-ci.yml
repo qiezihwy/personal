@@ -5,6 +5,8 @@ stages:
 
 build:
   stage: build
+  tag:
+    - build
   script:
     - echo "我是 build"
   
@@ -12,6 +14,8 @@ build:
 
 pages: # job 的名称必须要是 pages
   stage: deploy
+  tag:
+  - build
   retry:
     max: 2
 
