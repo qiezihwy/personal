@@ -7,9 +7,20 @@
 <body>
   <div id="content"></div>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
   <script>
-    document.getElementById('content').innerHTML =
-      marked.parse('# 测试');
+    $.ajax(
+        {
+            type:"get",
+            url:"./test.md",
+            dataType:"html",
+            success:function(data){
+                document.getElementById('content').innerHTML =
+                marked.parse(data);
+            }
+        }
+    )
+    
   </script>
 </body>
 </html>
