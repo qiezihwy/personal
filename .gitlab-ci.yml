@@ -9,6 +9,8 @@ pages: # job 的名称必须要是 pages
   - build
   retry:
     max: 2
+  before_script:
+    - git config --global http.sslVerify false
 
   script: # 生成站点
     - mkdir public
