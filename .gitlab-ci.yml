@@ -12,7 +12,7 @@ pages: # job 的名称必须要是 pages
 
   script: # 生成站点
     - mkdir public
-    - cp src/* public/
+    - cp -r src/* public/
   artifacts: # 制品
     paths:
       - public
