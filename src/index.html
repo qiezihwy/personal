@@ -1,108 +1,98 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>何威阳-个人简历</title>
-    <link
-      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css"
-      rel="stylesheet"
-      crossorigin="anonymous"
-    />
-    <style>
-      .my-table {
-        width: 100%;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>何威阳-个人简历</title>
+  <link
+    href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <style>
+    .my-table {
+      width: 100%;
+    }
+  </style>
+</head>
 
-  <body>
-    <div id="content" class="container">
-      <div class="my-3">
-        <h1>基本信息</h1>
-        <div class="d-flex">
-          <img
-            style="width: 100"
-            src="https://gitlab.gitlab.ingress.lab.gitfitlive.com/uploads/-/system/user/avatar/1/avatar.png"
-          />
-
-          <table class="my-table table ms-3">
-            <tr>
-              <td>姓名:</td>
-              <td><b>何威阳</b></td>
-            </tr>
-            <tr>
-              <td>求职意向:</td>
-              <td>软件开发</td>
-            </tr>
-            <tr>
-              <td>手机:</td>
-              <td>19802150367</td>
-            </tr>
-            <tr>
-              <td>邮箱:</td>
-              <td>qiezihwy@outlook.com</td>
-            </tr>
-            <tr>
-              <td>工作年限:</td>
-              <td>4年</td>
-            </tr>
-            <tr>
-              <td>出生年月:</td>
-              <td>1998年3月</td>
-            </tr>
-          </table>
+<body>
+  <div id="content" class="container">
+    <div class="my-3">
+      <h1>基本信息</h1>
+      <div class="d-flex">
+        <div>
+          <img title="个人照片" width="200" src="./assets/my_photo.JPEG" />
         </div>
-      </div>
-      <div class="mb-3">
-        <h1>职业技能</h1>
-        <ol>
-          <li>
-            后端: 熟练掌握java、python及其流行框架springboot、Django的使用
-          </li>
-          <li>
-            前端:
-            掌握dart、html、css、js等语言的使用，熟悉flutter、vue等前端框架的使用
-          </li>
-          <li>
-            云原生:
-            熟练使用docker等容器运行时管理容器，熟练使用dockerfile打包镜像，熟悉kubernetes的基本使用。
-          </li>
-          <li>CICD: 熟练使用gitlab、jenkins等持续集成工具。</li>
-          <li>持续学习、善于总结分享、喜欢运动旅行</li>
-        </ol>
-      </div>
-      <div class="mb-3">
-        <h1>工作履历</h1>
 
-        <table class="my-table table">
+        <table class="my-table table ms-3">
           <tr>
-            <th>时间</th>
-            <th>经历</th>
+            <td>姓名:</td>
+            <td><b>何威阳</b></td>
           </tr>
           <tr>
-            <td>2020年7月~至今</td>
-            <td>中国银联股份有限公司 应用管理岗</td>
+            <td>求职意向:</td>
+            <td>软件开发</td>
+          </tr>
+          <tr>
+            <td>手机:</td>
+            <td>19802150367</td>
+          </tr>
+          <tr>
+            <td>邮箱:</td>
+            <td>qiezihwy@outlook.com</td>
+          </tr>
+          <tr>
+            <td>工作年限:</td>
+            <td>4年</td>
+          </tr>
+          <tr>
+            <td>出生年月:</td>
+            <td>1998年3月</td>
           </tr>
         </table>
       </div>
-      <div class="mb-3" id="project"></div>
-      <div class="mb-3">
-        <h1>岗位职责</h1>
-
-        1. 描述职责。
-      </div>
-      <div class="mb-3">
-        <h1>结语</h1>
-        xxx
-      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script
-      src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
+    <div class="mb-3">
+      <h1>职业技能</h1>
+      <div id="skill"></div>
+    </div>
+    <div class="mb-3">
+      <h1>工作及教育履历</h1>
+
+      <table class="my-table table">
+        <tr>
+          <th>时间</th>
+          <th>经历</th>
+        </tr>
+        <tr>
+          <td>2016年~2020年</td>
+          <td>华东理工大学 信息与计算科学专业 本科</td>
+        </tr>
+        <tr>
+          <td>2020年7月~至今</td>
+          <td>中国银联股份有限公司 应用管理岗</td>
+        </tr>
+      </table>
+    </div>
+    <div class="mb-3">
+      <h1>项目经历</h1>
+      <div id="project"></div>
+    </div>
+    <div class="mb-3">
+      <h1>荣誉奖项</h1>
+
+      <div id="reward"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(document).ready(() => {
+      console.log("加载项目经历");
+
       $.ajax({
         type: "get",
         url: "project.md",
@@ -111,6 +101,26 @@
           document.getElementById("project").innerHTML = marked.parse(data);
         },
       });
-    </script>
-  </body>
-</html>
+      console.log("加载工作技能列表");
+
+      $.ajax({
+        type: "get",
+        url: "skill.md",
+        dataType: "text",
+        success: function (data) {
+          document.getElementById("skill").innerHTML = marked.parse(data);
+        },
+      });
+
+      console.log("加载奖项");
+      $.ajax({
+        type: "get",
+        url: "reward.md",
+        dataType: "text",
+        success: function (data) {
+          document.getElementById("reward").innerHTML = marked.parse(data);
+        },
+      });
+    });
+  </script>
+</body>

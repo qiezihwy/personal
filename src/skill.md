@@ -1,0 +1,5 @@
+- **后端**: 熟练掌握 java、python 及其流行框架 springboot、Django 的使用
+- **前端**: 掌握 dart、html、css、js 等语言的使用，熟悉 flutter、vue 等前端框架的使用
+- **云原生**: 熟练使用 docker 等容器运行时，熟练使用 dockerfile 打包镜像，掌握 kubernetes 的基本使用熟悉相关概念。
+- **CICD**: 熟练使用 gitlab、jenkins 等持续集成工具。
+- 持续学习、善于总结分享、喜欢运动旅行
