@@ -68,7 +68,7 @@
             熟练使用docker等容器运行时管理容器，熟练使用dockerfile打包镜像，熟悉kubernetes的基本使用。
           </li>
           <li>CICD: 熟练使用gitlab、jenkins等持续集成工具。</li>
-          <li>持续学习、善于总结分享、喜欢运动</li>
+          <li>持续学习、善于总结分享、喜欢运动旅行</li>
         </ol>
       </div>
       <div class="mb-3">
@@ -85,15 +85,11 @@
           </tr>
         </table>
       </div>
-      <div class="mb-3">
-        <h1>项目经历</h1>
-
-        - 项目 1：运营测试效能提升项目 - 项目描述： 描述该项目。 专利 1. 2.
-      </div>
+      <div class="mb-3" id="project"></div>
       <div class="mb-3">
         <h1>岗位职责</h1>
 
-        1. 描述职责。 2. 描述职责。
+        1. 描述职责。
       </div>
       <div class="mb-3">
         <h1>结语</h1>
@@ -101,9 +97,20 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script
       src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $.ajax({
+        type: "get",
+        url: "project.md",
+        dataType: "text",
+        success: function (data) {
+          document.getElementById("project").innerHTML = marked.parse(data);
+        },
+      });
+    </script>
   </body>
 </html>
