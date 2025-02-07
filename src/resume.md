@@ -7,7 +7,6 @@
 </tr>
 </table>
 
-<html>
 <table style="margin-left: auto; margin-right: auto;border:1px solid black">
 <tr>
 <td> <!--左侧内容-->
@@ -18,11 +17,10 @@
 </td>
 </tr>
 </table>
-</html>
 
 ## 基本信息
 
-- 
+-
 - 求职意向：xxx
 - 手机：1XX-XXX-XXX
 - 邮箱：xxxxx@xx.com
@@ -49,8 +47,9 @@
   描述该项目。
 
 专利
-1. 
-2. 
+
+1.
+2.
 
 ## 职责描述：
 
