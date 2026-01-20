@@ -88,5 +88,34 @@ spec:
                 }
             }
         }
-    }
+
+
+        stage('deploy at home') {
+            agent {
+                label 'prod && home'
+            }
+            steps {
+                    withCredentials([
+                        usernamePassword(
+                            credentialsId: 'harbor-credentials',
+                            usernameVariable: 'HARBOR_USERNAME',
+                            passwordVariable: 'HARBOR_PASSWORD'
+                        )
+                    ]) {
+                        sh """
+                            docker login -u "\$HARBOR_USERNAME" -p "\$HARBOR_PASSWORD" https://harbor.ingress.lab.gitfitlive.com
+                        """
+                    }
+                    echo "Pulling the docker image..."
+                    sh """
+                        docker pull $CONTAINER_NAME
+                    """
+                    echo "Pulling the docker image complete."
+                    echo "starting the docker image ..."
+                    sh """
+                        docker run -itd -p 8080:80 -n resume $CONTAINER_NAME 
+                    """
+                    echo "starting the docker image complete."
+            }
+        }
 }
