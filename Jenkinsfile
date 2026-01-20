@@ -113,6 +113,7 @@ spec:
                     echo "Pulling the docker image complete."
                     echo "starting the docker image ..."
                     sh """
+                        docker stop resume
                         docker run -itd -p 8080:80 --name resume $CONTAINER_NAME 
                     """
                     echo "starting the docker image complete."
