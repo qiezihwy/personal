@@ -72,7 +72,7 @@ spec:
                             )
                         ]) {
                             sh """
-                                docker login -u "\$HARBOR_USERNAME" -p "\$HARBOR_PASSWORD" https://harbor.ingress.lab.gitfitlive.com
+                                echo "\$HARBOR_PASSWORD" | docker login -u "\$HARBOR_USERNAME"  https://harbor.ingress.lab.gitfitlive.com --password-stdin
                             """
                         }
                         
