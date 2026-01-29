@@ -8,8 +8,6 @@ metadata:
   labels:
     app: docker-builder
 spec:
-  imagePullSecrets:
-    - name: hub-auth
   containers:
   - name: docker-client
     image: harbor.ingress.lab.gitfitlive.com/mirror/docker:latest
