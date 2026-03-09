@@ -1,4 +1,4 @@
-FROM harbor.ingress.lab.gitfitlive.com/mirror/nginx:alpine
+FROM nexus.ingress.lab.gitfitlive.com/docker-proxy/nginx:alpine
 
 
 RUN rm -rf /usr/share/nginx/html/*

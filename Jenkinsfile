@@ -1,3 +1,5 @@
+def repo = 'nexus.ingress.lab.gitfitlive.com'
+
 pipeline {
     agent {
         kubernetes {
@@ -10,7 +12,7 @@ metadata:
 spec:
   containers:
   - name: docker-client
-    image: harbor.ingress.lab.gitfitlive.com/mirror/docker:latest
+    image: ${repo}/docker-proxy/docker:latest
     command: ['cat']
     tty: true
     env:
@@ -27,7 +29,7 @@ spec:
       mountPath: /certs
       readOnly: true
   - name: docker-dind
-    image: harbor.ingress.lab.gitfitlive.com/mirror/docker:dind
+    image: ${repo}/docker-proxy/docker:dind
     securityContext:
       privileged: true
     env:
@@ -44,8 +46,7 @@ spec:
     }
     
     environment {
-        HARBOR = 'harbor.ingress.lab.gitfitlive.com'
-        CONTAINER_NAME = 'harbor.ingress.lab.gitfitlive.com/oasis/resume:latest'
+        CONTAINER_NAME = "${repo}/docker-hosted/resume:latest"
     }
     
     stages {
@@ -66,13 +67,13 @@ spec:
                         
                         withCredentials([
                             usernamePassword(
-                                credentialsId: 'harbor-credentials',
-                                usernameVariable: 'HARBOR_USERNAME',
-                                passwordVariable: 'HARBOR_PASSWORD'
+                                credentialsId: 'nexus-admin',
+                                usernameVariable: 'USERNAME',
+                                passwordVariable: 'PASSWORD'
                             )
                         ]) {
                             sh """
-                                echo "\$HARBOR_PASSWORD" | docker login -u "\$HARBOR_USERNAME"  https://harbor.ingress.lab.gitfitlive.com --password-stdin
+                                echo "\$PASSWORD" | docker login -u "\$USERNAME"  https://${repo} --password-stdin
                             """
                         }
                         
@@ -95,13 +96,13 @@ spec:
             steps {
                     withCredentials([
                         usernamePassword(
-                            credentialsId: 'harbor-credentials',
-                            usernameVariable: 'HARBOR_USERNAME',
-                            passwordVariable: 'HARBOR_PASSWORD'
+                            credentialsId: 'nexus-admin',
+                            usernameVariable: 'USERNAME',
+                            passwordVariable: 'PASSWORD'
                         )
                     ]) {
                         sh """
-                            docker login -u "\$HARBOR_USERNAME" -p "\$HARBOR_PASSWORD" https://harbor.ingress.lab.gitfitlive.com
+                            docker login -u "\$USERNAME" -p "\$PASSWORD" https://${repo}
                         """
                     }
                     echo "Pulling the docker image..."
