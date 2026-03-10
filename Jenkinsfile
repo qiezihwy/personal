@@ -113,7 +113,7 @@ spec:
                     echo "starting the docker image ..."
                     sh """
                         docker stop resume && docker rm resume
-                        docker run -itd -p 8080:80 --name resume $CONTAINER_NAME 
+                        docker run -itd -p 8080:80 --name resume --restart always $CONTAINER_NAME 
                     """
                     echo "starting the docker image complete."
             }
